@@ -1,0 +1,14 @@
+button {
+    margin: 10px;
+    background-color:rgb(236, 175, 69);
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    border: none;
+}
+.contador-container {
+    background-color: rgb(251, 243, 232);
+    width: 300px;
+    padding: 5px;
+    border-radius: 10px;
+}

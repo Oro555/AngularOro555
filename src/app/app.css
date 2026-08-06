@@ -1,0 +1,9 @@
+h2 {
+    color: rgb(100, 100, 239);
+}
+.saludo {
+    color: orange;
+}
+.titulo {
+    display: flex;
+}

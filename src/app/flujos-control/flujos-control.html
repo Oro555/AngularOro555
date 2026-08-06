@@ -1,0 +1,19 @@
+<ng-container >
+    <!--Flujo de control condicional IF-->
+    <div class="flujo-control-if">
+        <h4>Flo¡ujo de control condicional @IF</h4>
+            @if (isLoggedIn) {
+                <p>Bienvenido de nuevo, Amigo!</p>
+            } @else {
+                <p>Inicie Sesión!</p>
+            }
+    </div>
+    
+    <!--Flujo de control FOR-->
+    <div class="flujo-control-for">
+        <h4 >Flujo de control @For</h4>
+            @for (user of operatingSystems; track user.id) {
+                <p>{{ user.name}}</p>
+            }
+    </div>
+</ng-container>
