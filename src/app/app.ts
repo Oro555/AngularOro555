@@ -4,10 +4,11 @@ import { Padre } from "./padre/padre";
 import { FlujosControl } from "./flujos-control/flujos-control";
 import { OptimizacionImagenes } from "./optimizacion-imagenes/optimizacion-imagenes";
 import { Contador } from "./contador/contador";
+import { Formulario } from "./formulario/formulario";
 
 @Component({
   selector: 'app-component',
-  imports: [RouterOutlet, Padre, FlujosControl, OptimizacionImagenes, Contador],
+  imports: [RouterOutlet, Padre, FlujosControl, OptimizacionImagenes, Contador, Formulario],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
