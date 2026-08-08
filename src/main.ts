@@ -1,6 +1,13 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
 import { App } from './app/app';
+import { appConfig } from './app/app.config';
+import { provideRedux } from '@reduxjs/angular-redux';
+import { store } from './app/store';
 
-bootstrapApplication(App, appConfig)
-  .catch((err) => console.error(err));
+bootstrapApplication(App, {
+  ...appConfig,
+  providers: [
+    ...appConfig.providers,
+    provideRedux({ store }),
+  ],
+});

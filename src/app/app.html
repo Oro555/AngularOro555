@@ -1,12 +1,11 @@
-<div class="container">
-    <div class="titulo">
-        <h2>Hola, </h2>
-        <h2 class="saludo">{{ saludo }}</h2>
-    </div>
-    <app-contador></app-contador>
-    <app-padre></app-padre>
-    <app-flujos-control></app-flujos-control>
-    <app-formulario></app-formulario>
-    <app-optimizacion-imagenes></app-optimizacion-imagenes>
-</div>
-<router-outlet />
+
+    <h1 style="text-align:center;">{{ saludo }}</h1>
+    <nav>
+    <a routerLink="/Padre" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Componente Padre</a>
+    <a routerLink="/Imagenes" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Imagenes</a>
+    <a routerLink="/Contador" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Contador</a>
+    <a routerLink="/Formulario" routerLinkActive="active" [routerLinkActiveOptions]=" {exact:true}">Formulario</a>
+    </nav>
+<hr />
+
+<router-outlet></router-outlet>

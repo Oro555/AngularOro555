@@ -1,9 +1,8 @@
-h2 {
-    color: rgb(100, 100, 239);
-}
-.saludo {
-    color: orange;
-}
-.titulo {
-    display: flex;
+nav a {
+  padding:10px;
+  text-decoration: none;
+  margin: 5px;
+  display: inline-block;
+  background-color: #eeeeee;
+  border-radius: 4px;
 }

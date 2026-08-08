@@ -1,19 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { Padre } from "./padre/padre";
-import { FlujosControl } from "./flujos-control/flujos-control";
-import { OptimizacionImagenes } from "./optimizacion-imagenes/optimizacion-imagenes";
-import { Contador } from "./contador/contador";
-import { Formulario } from "./formulario/formulario";
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-component',
-  imports: [RouterOutlet, Padre, FlujosControl, OptimizacionImagenes, Contador, Formulario],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
-
-  saludo = ' Open Road';
-  
+  saludo = 'Hola Angular';
 }

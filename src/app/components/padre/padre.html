@@ -1,0 +1,11 @@
+<div class="componente-padre">
+      <p> Componente Padre!</p>
+      <app-hijo [datoHijo]="saludoDesdePadre"></app-hijo>
+
+      <!--Manejo de eventos-->
+      <section (mouseover)="showSecretMessage()">Hay un mensaje secreto 👀 {{ message }} </section>
+</div>
+
+<app-flujos-control></app-flujos-control>
+<!--Recibir la Data del componente Hijo-->
+<!--<app-hijo (alEnviar)="recibirMensaje($event)"></app-hijo>-->
