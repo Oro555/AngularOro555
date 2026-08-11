@@ -1,0 +1,52 @@
+<div style="padding: 24px; font-family: system-ui, sans-serif; display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+      
+      <!-- SECCIÓN A: CATÁLOGO DE PRODUCTOS DISPONIBLES -->
+      <div>
+        <h3>Catálogo de Tienda</h3>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          @for (product of shopProducts; track product.id) {
+            <div style=" background-color: #eee; padding: 12px; display: flex; justify-content: space-between; align-items: center; borderRadius: 8px;">
+              <div>
+                <p>{{ product.name }}</p>
+                <p style="color: #555;">{{ product.price | currency }}</p>
+              </div>
+              <button (click)="onAddItem(product)" style="padding: 8px 12px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">
+                Añadir al Carrito
+              </button>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- SECCIÓN B: CONTENIDO DEL CARRITO GLOBAL DE REDUX -->
+      <div style="background: #f9f9f9; padding: 20px; border-radius: 12px; border: 1px solid #eee;">
+        <h3>Carrito de Compras</h3>
+
+        @for (item of cartItems(); track item.id) {
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1px dashed #ccc; padding-bottom: 8px;">
+            <div>
+              <strong>{{ item.name }}</strong> x{{ item.quantity }}
+              <p style="margin: 2px 0 0 0; font-size: 14px; color: #666;">Subtotal: {{ (item.price * item.quantity) | currency }}</p>
+            </div>
+            <div style="display: flex; gap: 6px;">
+              <button (click)="onAddItem(item)" style="padding: 4px 8px; font-weight: bold;">+</button>
+              <button (click)="onRemoveItem(item.id)" style="padding: 4px 8px; font-weight: bold; color: red;">-</button>
+            </div>
+          </div>
+        } @empty {
+          <p style="color: #777;">El carrito está vacío.</p>
+        }
+
+        <!-- TOTAL Y BOTÓN DE ACCIÓN -->
+        @if (cartItems().length > 0) {
+          <div style="margin-top: 20px; padding-top: 15px; border-top: 2px solid #333; display: flex; justify-content: space-between; align-items: center;">
+            <h4>Total a Pagar:</h4>
+            <strong style="font-size: 18px; color: #28a745;">{{ totalPrice() | currency }}</strong>
+          </div>
+          <button (click)="onClearCart()" style="width: 100%; margin-top: 10px; padding: 10px; background: #dc3545; color: white; border: none; border-radius: 4px; cursor: pointer;">
+            Vaciar Carrito
+          </button>
+        }
+      </div>
+
+    </div>
