@@ -1,0 +1,29 @@
+.card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.alerta {
+  padding: 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.pendiente { background-color: #fff3cd; color: #856404; border: 1px solid #ffeeba; }
+.aprobado { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+.rechazado { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+
+.acciones {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+button { padding: 10px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; }
+.btn-aprobar { background-color: #28a745; color: white; }
+.btn-rechazar { background-color: #dc3545; color: white; }
+.btn-reiniciar { background-color: #6c757d; color: white; }

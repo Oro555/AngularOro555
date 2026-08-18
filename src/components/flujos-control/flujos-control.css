@@ -1,0 +1,19 @@
+
+.flujo-control-if, .flujo-control-for{
+    background-color: rgb(124, 192, 255);
+    border-radius: 10px;
+    padding: 20px;
+    width: 200px;
+    margin: 5px;
+}
+.container {
+    display: flex;
+}
+
+button {
+    background-color: rgb(73, 73, 237);
+    color: white;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+}

@@ -1,0 +1,15 @@
+<div style="padding: 20px; max-width: 600px; margin: 0 auto;">
+      <h2>🛒 Tu Carrito de Compras (Contenedor Inteligente)</h2>
+
+      <!-- Pasamos los datos al componente "Dumb" con [productos] -->
+      <!-- Escuchamos sus acciones con (eliminar) y (cambiarCantidad) -->
+      <app-carrito-lista
+        [productos]="listaProductos"
+        (eliminar)="onEliminarProducto($event)"
+        (cambiarCantidad)="onCambiarCantidad($event)">
+      </app-carrito-lista>
+
+      <div style="margin-top: 20px; border-top: 2px solid #ccc; padding-top: 10px;">
+        <h3>Total a Pagar: \${{ calcularTotal() }}</h3>
+      </div>
+    </div>

@@ -1,12 +1,19 @@
 
-    <h1 style="text-align:center;">{{ saludo }}</h1>
+<div style="display: flex; align-content: center; justify-content: center; align-items: center;">
+ <h1 style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">{{ saludo }} |</h1>
+ <h1 style="color: #1451c1; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">{{open}}</h1>
+ <h1 style="color: rgb(255, 191, 0); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">{{Road}}</h1>
+</div>
     <nav>
     <a routerLink="/Padre" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Componente Padre</a>
     <a routerLink="/Imagenes" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Imagenes</a>
     <a routerLink="/Contador" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Contador</a>
+    <a routerLink="/Pipe" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Pipe</a>
     <a routerLink="/Formulario" routerLinkActive="active" [routerLinkActiveOptions]=" {exact:true}">Formulario</a>
     <a routerLink="/Tasks" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Tasks</a>
     <a routerLink="/Cart" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Cart</a>
+    <a routerLink="/Vacaciones" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Vacaciones</a>
+   <!-- <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Dashboard</a>-->
     </nav>
 <hr />
 

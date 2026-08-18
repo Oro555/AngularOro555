@@ -1,0 +1,34 @@
+<div class="card">
+  <h2>Solicitud de Vacaciones</h2>
+  <p><strong>Empleado:</strong> {{ empleado }}</p>
+  <p><strong>Días:</strong> {{ DiasSolicitados }} días hábiles</p>
+  <p><strong>Fecha de inicio:</strong> {{ fechaInicio }}</p>
+
+
+  <div style="margin: 10px;">
+    <!-- Bloque Switch para evaluar el estado de aprobación -->
+    @switch (estadoActual()) {
+    @case ('PENDIENTE') {
+    <div class="alerta pendiente">
+      Esta solicitud esta **ESPERANDO REVISION** del administrador.
+    </div>
+    }
+    @case ('APROBADO') {
+    <div class="alerta aprobado">
+      ¡Felicidades! Tu solicitud ha sido **APROBADA**.
+    </div>
+    }
+    @case ('RECHAZADO') {
+    <div class="alerta rechazado">
+      Lo sentimos, tu solicitud fue **RECHAZADA** por necesidades operativas.
+    </div>
+    }
+    }
+  </div>
+  <!-- Botones de Acción para cambiar los estados -->
+  <div class="acciones">
+    <button class="btn-aprobar" (click)="aprobarSolicitud()">Aprobar</button>
+    <button class="btn-rechazar" (click)="rechazarSolicitud()">Rechazar</button>
+    <button class="btn-reiniciar" (click)="reiniciarSolicitud()">Reiniciar</button>
+  </div>
+</div>

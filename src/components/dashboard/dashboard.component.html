@@ -1,0 +1,16 @@
+<div>
+  <div *ngIf="usuarioSesion">
+    <h3>Bienvenido, {{usuarioSesion?.username}} (Rol: {{usuarioSesion?.rol}})</h3>
+    <p>Tu correo registrado es: {{ usuarioSesion?.emial}}</p>
+    <div *ngIf="asAdmin" >
+      <h4>Panel de Administración</h4>
+      <button (click)="eliminarBaseDatos()">Eliminar requisitos del Sistema</button>
+    </div>
+    <button (click)="salir()">Cerrar Sesion</button>
+  </div>
+  <template #anonimo>
+    <h3> Por favor, inicia sesion para ver tus herramientas de trabajo</h3>
+    <button (click)="ingresarComoAdmin()">Entrar como Admin</button>
+    <button (click)="ingresarComoCliente()">Entrar como Cliente</button>
+  </template>
+</div>

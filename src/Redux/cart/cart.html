@@ -1,0 +1,51 @@
+<div  class="container-cart">
+      <!-- SECCIÓN A: CATÁLOGO DE PRODUCTOS DISPONIBLES -->
+      <div>
+        <h3>Catálogo de Tienda</h3>
+        <div class="catalogo-tienda">
+          @for (product of shopProducts; track product.id) {
+            <div class="cart">
+              <div>
+                <p>{{ product.name }}</p>
+                <p>{{ product.price | currency }}</p>
+              </div>
+              <button (click)="onAddItem(product)" class="button-add">
+                Añadir al Carrito
+              </button>
+            </div>
+          }
+        </div>
+      </div>
+      <!-- SECCIÓN B: CONTENIDO DEL CARRITO GLOBAL DE REDUX -->
+      <div class="cart-content">
+        <h3>Carrito de Compras</h3>
+
+        @for (item of cartItems(); track item.id) {
+          <div style="background-color: #eaeaef; border-radius: 5px; padding: 15px; margin: 5px;">
+            <div>
+              <p>{{ item.name }}</p> x{{ item.quantity }}
+              <p class="subtotal">Subtotal: {{ (item.price * item.quantity) | currency }}</p>
+            </div>
+            <div style="display: flex; align-content: center; justify-content: center; align-items: center; padding: 5px;">
+              <button style="background-color: rgb(99, 178, 66);" class="button-add-delet" (click)="onAddItem(item)"> Agregar + </button>
+              <button style="background-color: rgb(227, 57, 57);" class="button-add-delet" (click)="onRemoveItem(item.id)"> Quitar - </button>
+            </div>
+          </div>
+        } @empty {
+          <p>El carrito está vacío.</p>
+        }
+
+        <!-- TOTAL Y BOTÓN DE ACCIÓN -->
+        @if (cartItems().length > 0) {
+          <hr>
+          <div class="compra-total">
+            <h5>Total a Pagar:</h5>
+            <p style="color: rgb(71, 71, 71);">{{ totalPrice() | currency }}</p>
+          </div>
+          <button style="background-color: #ffb700; color: white; border-radius:10px; border: none; padding: 10px;" (click)="onClearCart()" >
+            Vaciar Carrito
+          </button>
+        }
+      </div>
+
+    </div>
