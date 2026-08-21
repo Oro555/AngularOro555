@@ -1,14 +1,78 @@
-    <h3>Imagenes de animales:</h3>
-    <ul>
-      <li>
-        <p>Imagen Estatica:</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi facilis quam quas, omnis amet corporis similique quisquam voluptatibus a vero aperiam, id rerum recusandae blanditiis ea tempore? Iusto, aliquam dolores.</p>
-        <img ngSrc="https://cdn-icons-png.flaticon.com/128/7743/7743231.png" alt="Angular logo" width="220" height="220" />
-      </li>
-      <li>
-       <p>Imagen Dinamica:</p> 
-       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit accusantium ex assumenda laudantium officia distinctio dolore iste odio explicabo. In sequi eius fugit! Id ullam deleniti dignissimos, minus quasi possimus?</p>
-        <img [ngSrc]="logoUrl" [alt]="logoAlt" width="220" height="220" />
-      </li>
-    </ul>
-    
+<div class="container">
+  <div class="row">
+    <h3 class="display-5 mb-3 text-center">Catalogo de imágenes</h3>
+    <div id="carouselExampleIndicators" class="carousel slide w-75 mx-auto ">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqQhhm5gM2EM7FnubmTw9EIQYJmYrOCYIJyv6YRmDwsg&s=10"
+            class="d-block w-100" style="height: 400px;" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKb_unouJtaIuo7CuqCbv4PdlMt7SWeDHGrzKSW-TxDQ&s=10"
+            class="d-block w-100" style=" height: 400px;" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJBfSwwvyRnWo6VrTsnncFwdCwQ76SQulzySiUzhWatQ&s=10"
+            class="d-block w-100" style="height: 400px;" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container px-4 text-center">
+      <div class="row gx-5">
+        <div class="col">
+          <div class="p-3">
+            <h3>Imagenes de estatua:</h3>
+          </div>
+          <p>Imagen Estatica:</p>
+          <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi facilis quam
+            quas, omnis amet corporis
+            similique
+            quisquam voluptatibus a vero aperiam, id rerum recusandae blanditiis ea tempore? Iusto, aliquam dolores.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate fugiat iure ea ut veniam, maxime,
+            accusamus voluptatum quas, omnis unde laudantium laborum ad eligendi? Earum inventore delectus odio officiis
+            ducimus. </p>
+          <!-- <img ngSrc="https://cdn-icons-png.flaticon.com/128/11785/11785829.png" alt="Angular logo"/> -->
+          <img class="img-fluid" width="220" height="220"
+            src="https://cdn-icons-png.flaticon.com/128/11785/11785829.png" alt="">
+        </div>
+        <div class="col">
+          <div class="p-3">
+            <h3>Imagenes de un animal:</h3>
+          </div>
+          <p>Imagen Dinamica:</p>
+          <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit accusantium ex
+            assumenda laudantium officia
+            distinctio dolore iste odio explicabo. In sequi eius fugit! Id ullam deleniti dignissimos, minus quasi
+            possimus?. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid non nulla rem voluptatibus
+            commodi reprehenderit necessitatibus? Provident inventore officiis in commodi pariatur? Molestias est
+            dignissimos voluptates. Fugiat sint dolorum itaque!
+          </p>
+          <img class="img-fluid" [ngSrc]="logoUrl" [alt]="logoAlt" width="220" height="220" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

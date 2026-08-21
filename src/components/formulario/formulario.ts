@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { injectSelector } from '@reduxjs/angular-redux';
 
 @Component({
   selector: 'app-formulario',
@@ -18,6 +19,7 @@ export class Formulario {
     email: new FormControl('',[Validators.required, Validators.email]),
 
   });
+
 
   handleSubmit() {
     alert('Registro exitoso ' + this.profileForm.value.nombre);

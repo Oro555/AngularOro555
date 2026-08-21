@@ -1,4 +1,6 @@
 import { Component, signal } from '@angular/core';
+//import { NgSwitchCase, NgSwitch  } from '@angular/common';
+
 
 type EstadoAprobado = 'PENDIENTE' | 'APROBADO' | 'RECHAZADO';
 

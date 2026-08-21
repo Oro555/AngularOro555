@@ -1,21 +1,54 @@
-<div class="container">
-    <!--Flujo de control FOR-->
-    <div class="flujo-control-for">
-        <h4 >Flujo de control @For</h4>
-            @for (user of operatingSystems; track user.id) {
-
-                <p>{{ user.name}}</p>
-            }
+<div class="row row-cols-1 row-cols-md-3 g-3">
+  <div class="col">
+    <div class="card text-center" style="height: 23rem;">
+      <div class="card-body d-flex flex-column align-items-center justify-content-center">
+        <h5 class="card-title"> Flujo de control If</h5>
+        @if (isLoggedIn) {
+        <p class="card-text">Bienvenido de nuevo, Amigo!</p>
+        } @else {
+        <p class="card-text">Inicie Sesión!</p>
+      }
+        <!--<div *ngIf="isLoggedIn">
+          <p>Bienvenido de nuevo, Amigo!</p>
+        </div>  -->
+        <button class="btn btn-primary" (click)="iniciarSesion()"> {{isLoggedIn ? "Cerrar Sesion" : "Iniciar Sesion"}}</button>
+      </div>
     </div>
-    <!--Flujo de control condicional IF-->
-    <div class="flujo-control-if">
-        <h4>Floujo de control condicional @IF</h4>
-            @if (isLoggedIn) {
-                <p>Bienvenido de nuevo, Amigo!</p>
-            } @else {
-                <p>Inicie Sesión!</p>
-            }
-            <button (click)="iniciarSesion()"> {{isLoggedIn ? "Cerrar Sesion" : "Iniciar Sesion"}}</button>
+  </div>
+  <div class="col">
+    <div class="card" style="height: 23rem;">
+      <div class="card-body">
+        <h5 class="card-title"> Flujo de control For</h5>
+        <table class="table table-striped">
+          <thead>
+            <th>ID</th>
+            <th>Nombres</th>
+            <th>Email</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of operatingSystems; let i = index">
+              <th>{{ user.id + 1}}</th>
+              <td>{{user.name}}</td>
+              <td>{{user.email}}</td>
+            </tr>
+           <!-- @for (user of operatingSystems; track user.id) {
+            <tr>
+              <th>{{ user.id + 1}}</th>
+              <td>{{user.name}}</td>
+              <td>{{user.email}}</td>
+            </tr>
+          }-->
+          </tbody>
+        </table>
+      </div>
     </div>
-
+  </div>
+  <div class="col">
+    <div class="card" style="height: 22rem;">
+      <div class="card-body">
+        <h5 class="card-title">Estructura de control @Switch</h5>
+        <app-solicitud-vacaciones></app-solicitud-vacaciones>
+      </div>
+    </div>
+  </div>
 </div>

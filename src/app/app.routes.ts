@@ -7,8 +7,9 @@ import { Formulario } from '../components/formulario/formulario';
 import { Tasks } from '../Redux/tasks/tasks';
 import { Cart } from '../Redux/cart/cart';
 import { PipeComponent } from '../components/pipe/pipe.component';
+import { PerfilUsuarioComponentComponent } from '../ciclos-de-vida/perfil-usuario-component/perfil-usuario-component.component';
+import { UsuarioServiceService } from '../ciclos-de-vida/usuario-service.service';
 //import { DashboardComponent } from '../components/dashboard/dashboard.component';
-import { SolicitudVacacionesComponent } from '../components/solicitud-vacaciones/solicitud-vacaciones.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/Padre', pathMatch: 'full' },
@@ -19,7 +20,7 @@ export const routes: Routes = [
   { path: 'Tasks', component: Tasks},
   { path: 'Cart', component:Cart},
   { path: 'Pipe', component:PipeComponent },
-  { path: 'Vacaciones', component:SolicitudVacacionesComponent}
+  { path: 'CiclosVida', component:PerfilUsuarioComponentComponent}
   //{ path: 'dashboard', component:DashboardComponent}
 ];
 
@@ -31,6 +32,7 @@ export const RoutingComponents = [
   Tasks,
   Cart,
   PipeComponent,
+  PerfilUsuarioComponentComponent,
   //DashboardComponent,
 ];
 

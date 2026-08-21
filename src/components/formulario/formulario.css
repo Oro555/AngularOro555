@@ -9,7 +9,7 @@
   padding: 20px;
 }
 
-.form,.table {
+.form {
   flex: 1;
   min-width: 280px;
   background: white;

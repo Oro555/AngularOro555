@@ -1,11 +1,18 @@
-<div class="componente-padre">
-      <p> Componente Padre!</p>
-      <app-hijo [datoHijo]="saludoDesdePadre"></app-hijo>
+<div class="container-xxl">
+    <div class="card text-bg-success mb-3 mx-auto d-flex justify-content-center align-items-center" style="width: 25rem;">
+      <h5 class="card-header">Componente Padre</h5>
+      <div class="card-body">
+        <app-hijo [datoHijo]="saludoDesdePadre"></app-hijo>
+        <!--Manejo de eventos-->
+        <p class="card-text">Hay un mensaje secreto </p>
+        <section (mouseover)="showSecretMessage()">Pase el cursor del mouse para mostrar algo oculto 👀 {{ message }}  </section>
 
-      <!--Manejo de eventos-->
-      <section (mouseover)="showSecretMessage()">Hay un mensaje secreto 👀 {{ message }} </section>
+      </div>
+
+  </div>
+  <br>
+  <app-flujos-control></app-flujos-control>
 </div>
 
-<app-flujos-control></app-flujos-control>
 <!--Recibir la Data del componente Hijo-->
 <!--<app-hijo (alEnviar)="recibirMensaje($event)"></app-hijo>-->

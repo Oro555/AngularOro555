@@ -1,34 +1,50 @@
-<div class="card">
-  <h2>Solicitud de Vacaciones</h2>
-  <p><strong>Empleado:</strong> {{ empleado }}</p>
-  <p><strong>Días:</strong> {{ DiasSolicitados }} días hábiles</p>
-  <p><strong>Fecha de inicio:</strong> {{ fechaInicio }}</p>
+<p><strong>Empleado:</strong> {{ empleado }}</p>
+<p><strong>Días:</strong> {{ DiasSolicitados }} días hábiles</p>
+<p><strong>Fecha de inicio:</strong> {{ fechaInicio }}</p>
 
 
-  <div style="margin: 10px;">
-    <!-- Bloque Switch para evaluar el estado de aprobación -->
-    @switch (estadoActual()) {
-    @case ('PENDIENTE') {
-    <div class="alerta pendiente">
-      Esta solicitud esta **ESPERANDO REVISION** del administrador.
-    </div>
-    }
-    @case ('APROBADO') {
-    <div class="alerta aprobado">
+<div style="margin: 10px;">
+  <!--
+  <div class="alert alert-warning">
+    <p *ngSwitchCase="'PENDIENTE'">
+      Esta solicitud esta **ESPERANDO REVISION** del administrador.</p>
+  </div>
+  <div class="alert alert-success">
+    <p *ngSwitchCase="'APROBADO'">
       ¡Felicidades! Tu solicitud ha sido **APROBADA**.
-    </div>
-    }
-    @case ('RECHAZADO') {
-    <div class="alerta rechazado">
+    </p>
+  </div>
+  <div class="alert alert-danger">
+    <p *ngSwitchCase="'RECHAZADA'">
       Lo sentimos, tu solicitud fue **RECHAZADA** por necesidades operativas.
-    </div>
-    }
-    }
+    </p>
+  </div>-->
+
+
+
+    <!-- Bloque Switch para evaluar el estado de aprobación -->
+
+  @switch (estadoActual()) {
+  @case ('PENDIENTE') {
+  <div class="alert alert-warning">
+    Esta solicitud esta **ESPERANDO REVISION** del administrador.
   </div>
-  <!-- Botones de Acción para cambiar los estados -->
-  <div class="acciones">
-    <button class="btn-aprobar" (click)="aprobarSolicitud()">Aprobar</button>
-    <button class="btn-rechazar" (click)="rechazarSolicitud()">Rechazar</button>
-    <button class="btn-reiniciar" (click)="reiniciarSolicitud()">Reiniciar</button>
+  }
+  @case ('APROBADO') {
+  <div class="alert alert-success">
+    ¡Felicidades! Tu solicitud ha sido **APROBADA**.
   </div>
+  }
+  @case ('RECHAZADO') {
+  <div class="alert alert-danger">
+    Lo sentimos, tu solicitud fue **RECHAZADA** por necesidades operativas.
+  </div>
+  }
+  }
+</div>
+<!-- Botones de Acción para cambiar los estados -->
+<div class="acciones">
+  <button class="btn btn-success" (click)="aprobarSolicitud()">Aprobar</button>
+  <button class="btn btn-danger" (click)="rechazarSolicitud()">Rechazar</button>
+  <button class="btn btn-warning" (click)="reiniciarSolicitud()">Reiniciar</button>
 </div>

@@ -1,8 +1,27 @@
-<div class="contador-container">
-  <h4>Contador: {{ numero }}</h4>
-  <button (click)="sumar()">+ Sumar</button>
-  <button (click)="restar()">- Restar</button>
-  <button (click)="reiniciar()">Reiniciar</button>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 mb-3 mb-sm-0">
+      <div class="card" style="height: 15rem;">
+        <div class="card-header">
+          Contador
+        </div>
+        <div class="card-body">
+          <h4 class="card-title">Contador: {{ numero }}</h4>
+          <button class="btn btn-info" (click)="sumar()">+ Sumar</button>
+          <button class="btn btn-danger" (click)="restar()">- Restar</button>
+          <button class="btn btn-warning" (click)="reiniciar()">Reiniciar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card" style="height: 15rem;">
+        <div class="card-header">
+          Contador con Redux
+        </div>
+        <div class="card-body p-2 ">
+          <app-counter></app-counter>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-
-<app-counter></app-counter>

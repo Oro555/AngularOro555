@@ -9,7 +9,5 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
   styleUrl: './app.css',
 })
 export class App {
-  saludo = 'Hola Angular';
-  open = 'Open';
-  Road = 'Road'
+  openRoad = 'Open Road';
 }
