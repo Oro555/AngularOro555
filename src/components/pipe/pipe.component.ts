@@ -12,5 +12,12 @@ import { FormsModule } from '@angular/forms';
 })
 export class PipeComponent {
   textoIngresado: string = '';
+  textoPipeMonedas: number | null = null;
+  textoPipeNumeros: number = 0;
 
+  limpiarInput(): void {
+    this.textoIngresado = '';
+    this.textoPipeMonedas = null;
+    this.textoPipeNumeros = 0;
+  }
 }

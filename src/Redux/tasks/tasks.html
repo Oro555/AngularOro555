@@ -1,32 +1,32 @@
- <div style="padding: 20px; font-family: sans-serif;">
-      <h2>Lista de Tareas (Redux Toolkit + Angular 22)</h2>
-
-      <!-- Campo de texto básico para capturar la entrada -->
-      <div style="margin-bottom: 15px;">
-        <input #taskInput type="text" placeholder="¿Qué hay que hacer?" style="padding: 5px;" />
-        <button (click)="onAddTask(taskInput.value); taskInput.value=''" style="padding: 5px 10px; margin-left: 5px; border: none; color: white; border-radius: 10px; background-color: rgb(40, 157, 59); ">
-          Agregar
+<div style="padding: 20px; font-family: sans-serif;">
+  <h2>Lista de Tareas Redux</h2>
+  <!-- Campo de texto básico para capturar la entrada -->
+  <div style="margin-bottom: 15px;">
+    <input #taskInput type="text" placeholder="¿Qué hay que hacer?" style="padding: 5px;" />
+    <button (click)="onAddTask(taskInput.value); taskInput.value=''"
+      style="padding: 5px 10px; margin-left: 5px; border: none; color: white; border-radius: 10px; background-color: rgb(40, 157, 59); ">
+      Agregar
+    </button>
+  </div>
+  <div
+    style="background-color: rgb(248, 248, 255); display:flex; border: 1px solid; border-color: #d6d6d6; border-radius: 10px; width: 100%; height: 100%; ">
+    <ul>
+      <!-- Bloque de control nativo @for de Angular 22 iterando el Signal -->
+      @for (task of tasks(); track task.id) {
+      <li style="margin-top: 10px; display: flex; align-items: center; gap: 10px;">
+        <span class="estilo-nota" [style.textDecoration]="task.completed ? 'line-through' : 'none'"
+          [style.color]="task.completed ? '#888' : '#000'" (click)="onToggleTask(task.id)"
+          style="cursor: pointer; user-select: none;">
+          {{ task.title }}
+        </span>
+        <button (click)="onDeleteTask(task.id)"
+          style="color: red; border: 1px solid red; background: none; cursor: pointer;">
+          Eliminar
         </button>
-      </div>
-      <div style="background-color: rgb(248, 248, 255); display:flex; border: 1px solid; border-color: #d6d6d6; border-radius: 10px; width: 100%; height: 100%; ">
-       <ul>
-        <!-- Bloque de control nativo @for de Angular 22 iterando el Signal -->
-        @for (task of tasks(); track task.id) {
-          <li style="margin-top: 10px; display: flex; align-items: center; gap: 10px;">
-            <span class="estilo-nota"
-              [style.textDecoration]="task.completed ? 'line-through' : 'none'"
-              [style.color]="task.completed ? '#888' : '#000'"
-              (click)="onToggleTask(task.id)"
-              style="cursor: pointer; user-select: none;">
-              {{ task.title }}
-            </span>
-            <button (click)="onDeleteTask(task.id)" style="color: red; border: 1px solid red; background: none; cursor: pointer;">
-              Eliminar
-            </button>
-          </li>
-        } @empty {
-          <p style="color: #666;">No tienes tareas agregadas.</p>
-        }
-      </ul>
-      </div>
-    </div>
+      </li>
+      } @empty {
+      <p style="color: #666;">No tienes tareas agregadas.</p>
+      }
+    </ul>
+  </div>
+</div>

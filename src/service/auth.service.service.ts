@@ -15,7 +15,6 @@ export class AuthServiceService {
   private usuaeriosSubject = new BehaviorSubject <Usuario | null>(null);
 
   public usuarios$: Observable<Usuario | null> = this.usuaeriosSubject.asObservable();
-  constructor() { }
 
   iniciarSesion (user: string, pass: string): boolean {
     if ( user === 'admin' && pass === '1234') {

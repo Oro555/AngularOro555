@@ -1,3 +1,50 @@
-<label style="margin:10px;" for="">Ingrese una frase para invertirla</label>
-<input type="text" [(ngModel)]="textoIngresado" placeholder="Escribe algo...">
-<p> palabra invertida: {{ textoIngresado | reversePipe}} </p>
+<main class="container py-4">
+  <div class="row g-4">
+    <div class="col-12 col-lg-4">
+      <section class="card h-100 shadow-sm">
+        <div class="card-body d-flex flex-column">
+          <h2 class="card-title h4">Palabras invertidas</h2>
+          <div class="form-floating mb-3">
+            <textarea class="form-control" id="textoIngresado" placeholder="Escribe una frase"
+              [(ngModel)]="textoIngresado"></textarea>
+            <label for="textoIngresado">Ingrese una frase para invertirla</label>
+          </div>
+          <div class="mb-3">
+            <p class="mb-1">Palabra invertida: <span class="fw-semibold">{{ textoIngresado | reversePipe }}</span></p>
+            <p class="mb-1">Palabra en MAYÚSCULAS: <span class="fw-semibold">{{ textoIngresado | uppercase }}</span></p>
+            <p class="mb-0">Palabra en minúsculas: <span class="fw-semibold">{{ textoIngresado | lowercase }}</span></p>
+          </div>
+          <button type="button" class="btn btn-info w-100 mt-auto" (click)="limpiarInput()">Limpiar</button>
+        </div>
+      </section>
+    </div>
+    <div class="col-12 col-lg-4">
+      <section class="card h-100 shadow-sm">
+        <div class="card-body d-flex flex-column">
+          <h2 class="card-title h4">Pipes de monedas</h2>
+          <div class="input-group mb-3">
+            <span class="input-group-text">$</span>
+            <input id="textoPipeMonedas" type="number" class="form-control" aria-label="Valor de moneda"
+              [(ngModel)]="textoPipeMonedas" placeholder="Escribe un valor...">
+          </div>
+          <p class="mb-3">Monedas: <span class="fw-semibold">{{ textoPipeMonedas | currency: 'MXN' }}</span></p>
+          <button type="button" class="btn btn-info w-100 mt-auto" (click)="limpiarInput()">Limpiar</button>
+        </div>
+      </section>
+    </div>
+    <div class="col-12 col-lg-4">
+      <section class="card h-100 shadow-sm">
+        <div class="card-body d-flex flex-column">
+          <h2 class="card-title h4">Pipes de números</h2>
+          <div class="form-floating mb-3">
+            <input id="textoPipeNumeros" type="number" class="form-control" [(ngModel)]="textoPipeNumeros"
+              placeholder="Escribe un número">
+            <label for="textoPipeNumeros">Ingrese un valor numérico</label>
+          </div>
+          <p class="mb-3">Número: <span class="fw-semibold">{{ textoPipeNumeros | number: '1.2-2' }}</span></p>
+          <button type="button" class="btn btn-info w-100 mt-auto" (click)="limpiarInput()">Limpiar</button>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
