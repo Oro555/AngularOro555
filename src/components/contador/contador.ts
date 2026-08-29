@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Formulario } from "../formulario/formulario";
-import { Counter } from "../../Redux/features/counter/counter";
+import { Counter } from "../../Redux/counter/counter";
 
 @Component({
   selector: 'app-contador',

@@ -27,8 +27,8 @@
               <p class="subtotal">Subtotal: {{ (item.price * item.quantity) | currency }}</p>
             </div>
             <div style="display: flex; align-content: center; justify-content: center; align-items: center; padding: 5px;">
-              <button style="background-color: rgb(99, 178, 66);" class="button-add-delet" (click)="onAddItem(item)"> Agregar + </button>
-              <button style="background-color: rgb(227, 57, 57);" class="button-add-delet" (click)="onRemoveItem(item.id)"> Quitar - </button>
+              <button class="btn btn-success m-3" (click)="onAddItem(item)"> Agregar + </button>
+              <button class="btn btn-danger" (click)="onRemoveItem(item.id)"> Quitar - </button>
             </div>
           </div>
         } @empty {
@@ -42,7 +42,7 @@
             <h5>Total a Pagar:</h5>
             <p style="color: rgb(71, 71, 71);">{{ totalPrice() | currency }}</p>
           </div>
-          <button style="background-color: #ffb700; color: white; border-radius:10px; border: none; padding: 10px;" (click)="onClearCart()" >
+          <button class="btn btn-warning" (click)="onClearCart()" >
             Vaciar Carrito
           </button>
         }

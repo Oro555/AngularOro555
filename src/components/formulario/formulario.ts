@@ -13,16 +13,11 @@ export class Formulario {
 
   profileForm = new FormGroup({
     nombre: new FormControl('', Validators.required),
-    apellido:  new FormControl('', Validators.required),
+    apellido: new FormControl('', Validators.required),
     telefono: new FormControl('', Validators.required),
     direccion: new FormControl('', Validators.required),
-    email: new FormControl('',[Validators.required, Validators.email]),
+    email: new FormControl('', [Validators.required, Validators.email]),
 
   });
-
-
-  handleSubmit() {
-    alert('Registro exitoso ' + this.profileForm.value.nombre);
-  }
 
 }

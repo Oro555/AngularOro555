@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { injectSelector, injectDispatch } from '@reduxjs/angular-redux';
-import type { RootState } from '../../../app/store';
+import { RootState } from '../../app/store';
 import { decrement, increment } from './conter-slice';
 
 @Component({

@@ -1,7 +1,9 @@
 <nav class="navbar navbar-expand-lg  bg-dark border-bottom border-body mb-3" data-bs-theme="dark">
   <div class="container-fluid">
-    <a class="navbar-brand fs-2" style="color: rgb(255, 255, 254); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;" href="#">
-        {{openRoad}}
+    <a class="navbar-brand fs-2"
+      style="color: rgb(255, 255, 254); font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"
+      href="#">
+      {{openRoad}}
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,7 +12,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a  class="nav-link fs-5" aria-current="page" routerLink="/Padre" routerLinkActive="active"
+          <a class="nav-link fs-5" aria-current="page" routerLink="/Padre" routerLinkActive="active"
             [routerLinkActiveOptions]="{ exact: true }">Components</a>
         </li>
         <li class="nav-item">
@@ -22,29 +24,28 @@
             [routerLinkActiveOptions]="{ exact: true }">Contador</a>
         </li>
         <li class="nav-item">
-           <a class="nav-link fs-5" routerLink="/Pipe" routerLinkActive="active"
+          <a class="nav-link fs-5" routerLink="/Pipe" routerLinkActive="active"
             [routerLinkActiveOptions]="{exact: true}">Pipe</a>
         </li>
         <li class="nav-item">
-           <a class="nav-link fs-5" routerLink="/Formulario" routerLinkActive="active"
+          <a class="nav-link fs-5" routerLink="/Formulario" routerLinkActive="active"
             [routerLinkActiveOptions]=" {exact:true}">Formulario</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link fs-5" routerLink="/Tasks" routerLinkActive="active"
-            [routerLinkActiveOptions]="{exact: true}">Tasks</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link fs-5" routerLink="/Cart" routerLinkActive="active"
-            [routerLinkActiveOptions]="{exact: true}">Cart</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true" routerLink="/CiclosVida" routerLinkActive="active"
-            [routerLinkActiveOptions]="{exact: true}">Ciclos de Vida</a>
+        <li class="nav-item dropdown fs-5">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Redux
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item fs-6" routerLink="/Tasks" routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}">Registro de Tareas</a></li>
+            <li><a class="dropdown-item fs-6" routerLink="/Cart" routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}">Carrito de Compras</a></li>
+            <li><a class="dropdown-item fs-6" routerLink="/Crud" routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}">Registro de Productos</a></li>
+          </ul>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-
-
 <router-outlet></router-outlet>

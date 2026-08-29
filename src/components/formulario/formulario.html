@@ -1,39 +1,57 @@
-<div class="container">
-  <div class="form">
-    <form [formGroup]="profileForm" (ngSubmit)="handleSubmit()">
-      <label for="nombre">Nombre</label>
-      <input id="nombre" type="text" formControlName="nombre" />
-      <label for="apellido">Apellido</label>
-      <input id="apellido" type="text" formControlName="apellido" />
-      <label for="telefono">Teléfono</label>
-      <input id="telefono" type="text" formControlName="telefono" />
-      <label for="direccion">Dirección</label>
-      <input id="direccion" type="text" formControlName="direccion" />
-      <label for="email">Correo</label>
-      <input id="email" type="email" formControlName="email" />
-    </form>
-    <button type="submit" [disabled]="profileForm.invalid">Enviar</button>
-  </div>
-  <div class="row">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Nombre</th>
-          <th>Apellido</th>
-          <th>Teléfono</th>
-          <th>Dirección</th>
-          <th>Email</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>{{ profileForm.value.nombre }}</td>
-          <td>{{ profileForm.value.apellido }}</td>
-          <td>{{ profileForm.value.telefono }}</td>
-          <td>{{ profileForm.value.direccion }}</td>
-          <td>{{ profileForm.value.email }}</td>
-        </tr>
-      </tbody>
-    </table>
+<div class="container overflow-hidden text-center">
+  <h3 class="">Formulario personas</h3>
+  <div class="row gx-5">
+    <div class="col">
+      <div class="p-3">
+        <div class="form">
+          <form [formGroup]="profileForm">
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="nombre" formControlName="nombre">
+              <label for="floatingInput">Nombre</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="apellido" formControlName="apellido">
+              <label for="floatingInput">Apellido</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="telefono" formControlName="telefono">
+              <label for="floatingInput">Teléfono</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="direccion" formControlName="direccion">
+              <label for="floatingInput">Dirección</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="email" formControlName="email">
+              <label for="floatingInput">Email address</label>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="p-3">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="table-info">Nombre</th>
+              <th  class="table-info">Apellido</th>
+              <th class="table-info">Teléfono</th>
+              <th class="table-info">Dirección</th>
+              <th class="table-info">Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="table-light">{{ profileForm.value.nombre }}</td>
+              <td class="table-light">{{ profileForm.value.apellido }}</td>
+              <td class="table-light">{{ profileForm.value.telefono }}</td>
+              <td class="table-light">{{ profileForm.value.direccion }}</td>
+              <td class="table-light">{{ profileForm.value.email }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>

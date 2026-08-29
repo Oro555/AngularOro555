@@ -11,6 +11,9 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './pipe.component.css'
 })
 export class PipeComponent {
+  validarMoneda() {
+    throw new Error('Method not implemented.');
+  }
   textoIngresado: string = '';
   textoPipeMonedas: number | null = null;
   textoPipeNumeros: number = 0;

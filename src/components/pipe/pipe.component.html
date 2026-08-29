@@ -27,7 +27,9 @@
             <input id="textoPipeMonedas" type="number" class="form-control" aria-label="Valor de moneda"
               [(ngModel)]="textoPipeMonedas" placeholder="Escribe un valor...">
           </div>
-          <p class="mb-3">Monedas: <span class="fw-semibold">{{ textoPipeMonedas | currency: 'MXN' }}</span></p>
+          <p class="mb-3">Monedas: <span class="fw-semibold">{{ textoPipeMonedas | currency: 'MXN' : 'symbol':'3.1-1' }}</span></p>
+          <p class="mb-3">Monedas: <span class="fw-semibold">{{ textoPipeMonedas | currency: 'CAD' : 'symbol':'3.1-1'}}</span></p>
+          <p class="mb-3">Monedas: <span class="fw-semibold">{{ textoPipeMonedas | currency: 'INR' : 'symbol':'3.1-1'  }}</span></p>
           <button type="button" class="btn btn-info w-100 mt-auto" (click)="limpiarInput()">Limpiar</button>
         </div>
       </section>

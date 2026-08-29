@@ -1,15 +1,13 @@
 import { Routes } from '@angular/router';
-
+//import { PerfilUsuarioComponent } from '../ciclos-de-vida/perfil-usuario-component/perfil-usuario-component';
 import { Padre } from '../components/padre/padre';
-import { OptimizacionImagenes } from '../components/optimizacion-imagenes/optimizacion-imagenes';
 import { Contador } from '../components/contador/contador';
 import { Formulario } from '../components/formulario/formulario';
-import { Tasks } from '../Redux/tasks/tasks';
-import { Cart } from '../Redux/cart/cart';
 import { PipeComponent } from '../components/pipe/pipe.component';
-import { PerfilUsuarioComponentComponent } from '../ciclos-de-vida/perfil-usuario-component/perfil-usuario-component.component';
-import { UsuarioServiceService } from '../ciclos-de-vida/usuario-service.service';
-//import { DashboardComponent } from '../components/dashboard/dashboard.component';
+import { OptimizacionImagenes } from '../components/optimizacion-imagenes/optimizacion-imagenes';
+import { Cart } from '../Redux/cart/cart';
+import { Crud } from '../Redux/crud/crud';
+import { Tasks } from '../Redux/tasks/tasks';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/Padre', pathMatch: 'full' },
@@ -20,8 +18,7 @@ export const routes: Routes = [
   { path: 'Tasks', component: Tasks},
   { path: 'Cart', component:Cart},
   { path: 'Pipe', component:PipeComponent },
-  { path: 'CiclosVida', component:PerfilUsuarioComponentComponent}
-  //{ path: 'dashboard', component:DashboardComponent}
+  { path: 'Crud', component:Crud},
 ];
 
 export const RoutingComponents = [
@@ -32,7 +29,6 @@ export const RoutingComponents = [
   Tasks,
   Cart,
   PipeComponent,
-  PerfilUsuarioComponentComponent,
-  //DashboardComponent,
+  Crud,
 ];
 

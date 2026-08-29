@@ -1,0 +1,27 @@
+<div class="container">
+  <h3>Inventario</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Precio</th>
+        <th>Descripción</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products$()">
+        <td>{{ product.name }}</td>
+        <td>{{ product.price | currency }}</td>
+        <td>{{ product.description }}</td>
+        <td>
+          <button class="btn btn-primary m-2" (click)="editProduct(product.id)">Editar</button>
+          <button class="btn btn-danger" (click)="deleteProduct(product.id)">Eliminar</button>
+        </td>
+      </tr>
+      <tr *ngIf="products$().length === 0">
+        <td colspan="4">No hay registros en la tienda de Redux</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
