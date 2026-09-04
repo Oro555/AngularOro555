@@ -1,23 +1,24 @@
 <div class="container">
-  <h3>{{ isEditing ? 'Modificar Producto' : 'Nuevo Producto' }}</h3>
-  <form (ngSubmit)="saveProduct()">
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Nombre</label>
-      <input type="text" [(ngModel)]="name" name="name" placeholder="Nombre" class="form-control"
-        aria-describedby="emailHelp" required>
-      <div id="emailHelp" class="form-text">Ingresa el nombre completo</div>
-    </div>
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Precio</label>
-      <input type="number" [(ngModel)]="price" name="price" placeholder="Precio" class="form-control"
-        aria-describedby="emailHelp" required>
-    </div>
-    <div class="form-floating">
-      <textarea class="form-control" [(ngModel)]="description" name="description" placeholder="Descripción"
-        style="height: 100px"></textarea>
-      <label for="floatingTextarea2">Descripcion</label>
-    </div>
-    <button class="btn btn-primary m-2" type="submit">{{ isEditing ? 'Actualizar' : 'Guardar' }}</button>
-    <button class="btn btn-danger" type="button" *ngIf="isEditing" (click)="clearForm()">Cancelar</button>
-  </form>
+  <div class="card p-4 m-2">
+    <h3>{{ isEditing ? 'Modificar Producto' : 'Nuevo Producto' }}</h3>
+    <form (ngSubmit)="saveProduct()">
+      <div class="mb-3">
+        <label for="name" class="form-label">Nombre</label>
+        <input id="name" type="text" [(ngModel)]="name" name="name" placeholder="Nombre" class="form-control" required>
+        <div id="emailHelp" class="form-text">Ingresa el nombre completo</div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Precio</label>
+        <input type="number" [(ngModel)]="price" name="price" placeholder="Precio" class="form-control"
+          aria-describedby="emailHelp" required>
+      </div>
+      <div class="form-floating">
+        <textarea class="form-control" [(ngModel)]="description" name="description" placeholder="Descripción"
+          style="height: 100px"></textarea>
+        <label for="floatingTextarea2">Descripcion</label>
+      </div>
+      <button class="btn btn-primary m-2" type="submit">{{ isEditing ? 'Actualizar' : 'Guardar' }}</button>
+      <button class="btn btn-danger" type="button" *ngIf="isEditing" (click)="clearForm()">Cancelar</button>
+    </form>
+  </div>
 </div>

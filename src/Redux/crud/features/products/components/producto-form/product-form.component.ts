@@ -1,5 +1,5 @@
 import { Component, effect } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { FormsModule} from "@angular/forms";
 import { CommonModule } from "@angular/common";
 import { injectSelector, injectDispatch } from '@reduxjs/angular-redux';
 import { Product } from '../../../../models/product.model';
@@ -17,7 +17,7 @@ export class ProductFormComponent {
   private injector = injectDispatch();
   private currentProduct$ = injectSelector(selectCurrentProduct);
 
-  id = '';
+  private editingProductId: string | null = null;
   name = '';
   price = 0;
   description = '';
@@ -27,13 +27,13 @@ export class ProductFormComponent {
     effect(() => {
       const product = this.currentProduct$();
       if (product) {
-        this.id = product.id;
+        this.editingProductId = product.id;
         this.name = product.name;
         this.price = product.price;
         this.description = product.description;
         this.isEditing = true;
       } else {
-        this.id = '';
+        this.editingProductId = null;
         this.name = '';
         this.price = 0;
         this.description = '';
@@ -44,13 +44,13 @@ export class ProductFormComponent {
 
   saveProduct() {
     const productData: Product = {
-      id: this.isEditing ? this.id : Date.now().toString(),
+      id: this.editingProductId ?? Date.now().toString(),
       name: this.name,
       price: this.price,
       description: this.description
     };
 
-    if (this.isEditing) {
+    if (this.editingProductId !== null) {
       this.injector(updateProduct(productData));
     } else {
       this.injector(addProduct(productData));
@@ -59,11 +59,11 @@ export class ProductFormComponent {
   }
 
   clearForm() {
-  this.id = '';
-  this.name = '';
-  this.price = 0;
-  this.description = '';
-  this.isEditing = false;
-  this.injector(selectProduct(null));
-}
+    this.editingProductId = null;
+    this.name = '';
+    this.price = 0;
+    this.description = '';
+    this.isEditing = false;
+    this.injector(selectProduct(null));
+  }
 }

@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-//import { PerfilUsuarioComponent } from '../ciclos-de-vida/perfil-usuario-component/perfil-usuario-component';
 import { Padre } from '../components/padre/padre';
 import { Contador } from '../components/contador/contador';
 import { Formulario } from '../components/formulario/formulario';
 import { PipeComponent } from '../components/pipe/pipe.component';
+import { FormularioPersona } from '../components/formulario-persona/formulario-persona';
 import { OptimizacionImagenes } from '../components/optimizacion-imagenes/optimizacion-imagenes';
 import { Cart } from '../Redux/cart/cart';
 import { Crud } from '../Redux/crud/crud';
@@ -15,6 +15,7 @@ export const routes: Routes = [
   { path: 'Imagenes', component: OptimizacionImagenes },
   { path: 'Contador', component: Contador },
   { path: 'Formulario', component: Formulario},
+  { path: 'FormularioPersona', component:FormularioPersona},
   { path: 'Tasks', component: Tasks},
   { path: 'Cart', component:Cart},
   { path: 'Pipe', component:PipeComponent },
@@ -26,6 +27,7 @@ export const RoutingComponents = [
   OptimizacionImagenes,
   Contador,
   Formulario,
+  FormularioPersona,
   Tasks,
   Cart,
   PipeComponent,

@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { injectDispatch, injectSelector } from '@reduxjs/angular-redux';
 import { addTask, toggleTask, deleteTask, selectAllTasks } from './store/tasks.slice';
 
-
 @Component({
   selector: 'app-tasks',
   standalone: true,

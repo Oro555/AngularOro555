@@ -8,7 +8,8 @@ export interface ProductState {
 
 const initialState: ProductState = {
   products: [
-    { id: '1', name: 'Laptop Pro v22', price: 1500, description: 'Desarrollo en Angular' }
+    { id: '1', name: 'Laptop Lenovo LOQ15', price: 1500, description: 'Laptop Gaming de Entrada, intel i5HX, RTX 5050 8gb, 512gb SDD, teclado iluminado' },
+    { id: '2', name: 'Telefono poco f5', price:1500, description: 'Color Negro, Snap Drago Gen1+, 512gb de almacenamientos, Bateria de 5000mha'},
   ],
   selectedProductId: null
 };
@@ -26,8 +27,8 @@ export const productSlice = createSlice({
       const index = state.products.findIndex(p => p.id === action.payload.id);
       if (index !== -1) {
         state.products[index] = action.payload;
+        state.selectedProductId = null;
       }
-      state.selectedProductId = null;
     },
     // Delete (Eliminar)
     deleteProduct: (state, action: PayloadAction<string>) => {

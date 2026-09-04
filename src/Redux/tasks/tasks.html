@@ -1,12 +1,13 @@
 <div class="container-fluid">
+  <div class="card p-4 align-items-center">
   <h2 class="display-6">Lista de Tareas Redux</h2>
-  <div class="mb-3 d-flex ">
-    <input class="mb-2" #taskInput type="text" placeholder="¿Qué hay que hacer?" />
+  <div class="mb-3 d-flex justify-content-center align-items-center ">
+    <input type="text" class="form-control mb-2" #taskInput placeholder="¿Qué hay que hacer?" aria-label="First name">
     <button class="btn btn-success ms-2" (click)="onAddTask(taskInput.value); taskInput.value=''">
       Agregar
     </button>
   </div>
-  <div class="row p-2">
+  <div class="card p-2">
     <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true"
       class="scrollspy-example-2 h-50" tabindex="0">
       <ul>
@@ -25,4 +26,5 @@
       </ul>
     </div>
   </div>
+</div>
 </div>

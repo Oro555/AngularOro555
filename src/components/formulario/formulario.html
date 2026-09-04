@@ -6,23 +6,24 @@
         <div class="form">
           <form [formGroup]="profileForm">
             <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="nombre" formControlName="nombre">
+              <label for="firstName" class="form-label"></label>
+              <input type="email" class="form-control" name="firstName" id="nombre" formControlName="nombre" required>
               <label for="floatingInput">Nombre</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="apellido" formControlName="apellido">
+              <input type="email" class="form-control" id="apellido" formControlName="apellido" required="">
               <label for="floatingInput">Apellido</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="telefono" formControlName="telefono">
+              <input type="email" class="form-control" id="telefono" formControlName="telefono" required="">
               <label for="floatingInput">Teléfono</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="direccion" formControlName="direccion">
+              <input type="email" class="form-control" id="direccion" formControlName="direccion" required>
               <label for="floatingInput">Dirección</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="email" formControlName="email">
+              <input type="email" class="form-control" id="email" formControlName="email" required>
               <label for="floatingInput">Email address</label>
             </div>
           </form>
@@ -30,12 +31,12 @@
       </div>
     </div>
     <div class="col">
-      <div class="p-3">
+      <div class="table-responsive p-3">
         <table class="table">
           <thead>
             <tr>
               <th class="table-info">Nombre</th>
-              <th  class="table-info">Apellido</th>
+              <th class="table-info">Apellido</th>
               <th class="table-info">Teléfono</th>
               <th class="table-info">Dirección</th>
               <th class="table-info">Email</th>
